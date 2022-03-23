@@ -10,7 +10,7 @@ class SimpleCoinBlock:
 
 
 transaction_1 = 'Billy sends 1 SC to Joe'
-transaction_2 = 'Bob sends 2 SC to Joe'
+transaction_2 = 'Bob sends 2.7 SC to Joe'
 transaction_3 = 'Joe sends 3 SC to Billy'
 transaction_4 = 'Dave sends 8 SC to Bob'
 transaction_5 = 'Joe sends 4.3 SC to Jill'
@@ -20,3 +20,13 @@ initial_block = SimpleCoinBlock('Initial Block', [transaction_1, transaction_2])
 
 print(initial_block.block_data)
 print(initial_block.block_hash)
+
+second_block = SimpleCoinBlock(initial_block.block_hash, [transaction_3, transaction_4])
+
+print(second_block.block_data)
+print(second_block.block_hash)
+
+third_block = SimpleCoinBlock(second_block.block_hash, [transaction_5, transaction_6])
+
+print(third_block.block_data)
+print(third_block.block_hash)
